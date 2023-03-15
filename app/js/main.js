@@ -1,3 +1,4 @@
+import { showEmptyMessage } from './empty-message.js';
 import { validateCommentField, validateNameField } from './validate.js';
 import { renderComment } from './comment.js';
 
@@ -22,6 +23,7 @@ function loadComments() {
       renderComment(field, comment);
     });
   }
+  showEmptyMessage(field, comments);
 }
 
 function fieldClickHandler(evt) {
@@ -42,6 +44,7 @@ function fieldClickHandler(evt) {
     localStorage.setItem('comments', JSON.stringify(comments));
 
     commentElement.remove();
+    showEmptyMessage(field, comments);
   }
 }
 
@@ -67,6 +70,7 @@ function submitBtnClickHandler(evt) {
   localStorage.setItem('comments', JSON.stringify(comments));
 
   renderComment(field, comment);
+  showEmptyMessage(field, comments);
 
   nameField.value = '';
   commentField.value = '';
