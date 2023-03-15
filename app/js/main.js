@@ -1,3 +1,4 @@
+import { validateCommentField, validateNameField } from './validate.js';
 import { renderComment } from './comment.js';
 
 const field = document.querySelector('.comments__list');
@@ -11,6 +12,8 @@ loadComments();
 
 field.addEventListener('click', fieldClickHandler);
 submitBtn.addEventListener('click', submitBtnClickHandler);
+nameField.addEventListener('input', () => validateNameField(nameField));
+commentField.addEventListener('input', () => validateCommentField(commentField));
 
 function loadComments() {
   if (localStorage.getItem('comments')) {
@@ -44,6 +47,13 @@ function fieldClickHandler(evt) {
 
 function submitBtnClickHandler(evt) {
   evt.preventDefault();
+
+  validateNameField(nameField);
+  validateCommentField(commentField);
+
+  if (nameField.classList.contains('invalid') || commentField.classList.contains('invalid')) {
+    return;
+  }
 
   const comment = {
     id: Date.now(),
