@@ -1,0 +1,48 @@
+.comment {
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 0 #cccccc;
+
+  .comment__name {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .comment__text {
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  .comment__date {
+    margin-top: 15px;
+    margin-left: 25px;
+    font-size: 10px;
+    color: #696969;
+  }
+
+  .comment__btn {
+    position: absolute;
+    transition: all .3s ease-in-out;
+
+    &-like {
+      left: 10px;
+      bottom: 5px;
+
+      &--active {
+        svg path {
+          fill: #000000;
+        }
+      }
+    }
+
+    &-delete {
+      top: 10px;
+      right: 10px;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}

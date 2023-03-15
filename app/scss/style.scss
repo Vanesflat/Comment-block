@@ -18,7 +18,11 @@ body {
 }
 
 body {
-  // добавить шрифты
+  display: grid;
+  place-items: center;
+  background: linear-gradient(90deg, rgb(152, 234, 216) 22%, rgb(100, 212, 65) 72%);
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
 }
 
 a {
@@ -44,15 +48,10 @@ button {
   padding: 0;
 }
 
-.wrapper {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.main {
-  flex-grow: 1;
-}
+//blocks
+@import "blocks/comments.scss";
+@import "blocks/comment.scss";
+@import "blocks/form.scss";
 
 //media
 @import "media.scss";
