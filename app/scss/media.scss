@@ -5,18 +5,38 @@
     }
 
     .comments__content {
+      flex-direction: column-reverse;
+      justify-content: start;
       width: 100%;
-      min-height: 70vh;
+      min-height: 90vh;
+    }
+
+    .comments__list {
+      flex-direction: column-reverse;
     }
 
     .comments__empty-message {
+      top: 5rem;
       font-size: 15px;
     }
   }
 
   .form {
+    padding: 0;
+    padding-bottom: 5px;
+    border-top: none;
+    border-bottom: 1px solid #cccccc;
+
+    fieldset {
+      width: 100%;
+    }
+
     .form__group {
       flex-direction: column;
+    }
+
+    .form__btn {
+      width: 100%;
     }
   }
 }
