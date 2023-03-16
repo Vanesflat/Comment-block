@@ -22,6 +22,7 @@
   }
 
   .comments__list {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -29,7 +30,7 @@
 
   .comments__empty-message {
     position: absolute;
-    top: 30%;
+    top: 10rem;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
